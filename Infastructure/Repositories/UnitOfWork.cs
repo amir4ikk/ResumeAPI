@@ -1,7 +1,6 @@
 ﻿using Data.Interfaces;
 using Infastructure.Data;
 using Infastructure.Interfaces;
-using Microsoft.EntityFrameworkCore;
 
 namespace Infastructure.Repositories;
 public class UnitOfWork(AppDbContext dbContext) : IUnitOfWork
@@ -14,5 +13,4 @@ public class UnitOfWork(AppDbContext dbContext) : IUnitOfWork
 
     public IReviewRepository Review => new ReviewRepository(_dbContext);
 
-    public INotificationsRepository Notifications => new NotificationsRepository(_dbContext);
 }

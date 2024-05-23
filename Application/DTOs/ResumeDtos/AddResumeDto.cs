@@ -29,7 +29,6 @@ public class AddResumeDto
             Languages = dto.Languages,
             UserId = dto.UserId,
             FilePath = dto.FilePath,
-            ReviewId = dto.ReviewId,
         };
     }
 }

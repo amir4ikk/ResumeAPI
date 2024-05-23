@@ -1,4 +1,6 @@
-﻿namespace Domain.Entities;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Domain.Entities;
 public class Resume : BaseEntity
 {
     public string Name { get; set; } = string.Empty;
@@ -10,9 +12,8 @@ public class Resume : BaseEntity
     public string ProgrammingLanguages { get; set; } = string.Empty;
     public string Languages { get; set; } = string.Empty;
 
-    public int UserId { get; set; }
     public string FilePath { get; set; } = string.Empty;
-    public int ReviewId { get; set; }
-    public Review Review { get; set; } = null!;
+    public int UserId { get; set; }
+    [ForeignKey(nameof(UserId))]
     public User User { get; set; } = new();
 }

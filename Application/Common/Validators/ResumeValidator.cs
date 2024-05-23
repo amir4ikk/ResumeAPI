@@ -29,8 +29,5 @@ public class ResumeValidator : AbstractValidator<Resume>
         RuleFor(x => x.UserId)
             .NotEmpty()
             .WithMessage("Kim Tomonidan Yozilganligini Bilishimiz Lozim Iltimos Malumot Kiriting");
-        RuleFor(x => x.ReviewId)
-            .NotEmpty()
-            .WithMessage("Qaysi Review Uchun Yozilganligini Bilishimiz Lozim Iltimos Malumotni Kiriting");
     }
 }

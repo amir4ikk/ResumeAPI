@@ -11,5 +11,6 @@ public class Review : BaseEntity
 
     public bool IsSerching { get; set; }
     public int UserId { get; set; }
+    [ForeignKey(nameof(UserId))]
     public User User { get; set; } = new();
 }

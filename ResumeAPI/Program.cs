@@ -42,7 +42,6 @@ builder.Services.AddTransient<IEmailService, EmailService>();
 builder.Services.AddTransient<IAdminService, AdminService>();
 builder.Services.AddTransient<IReviewService, ReviewService>();
 builder.Services.AddTransient<IResumeService, ResumeService>();
-builder.Services.AddTransient<INotificationsService, NotificationsService>();
 
 builder.Services.ConfigureJwtAuthorize(builder.Configuration);
 builder.Services.ConfigureSwaggerAuthorize(builder.Configuration);

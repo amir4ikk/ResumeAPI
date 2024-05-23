@@ -6,5 +6,4 @@ public interface IUnitOfWork
     IResumeRepository Resumes { get; }
     IReviewRepository Review { get; }
     IUserRepository User { get; }
-    INotificationsRepository Notifications { get; }
 }

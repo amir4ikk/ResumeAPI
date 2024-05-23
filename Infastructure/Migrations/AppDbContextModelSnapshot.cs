@@ -22,27 +22,6 @@ namespace Infastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Domain.Entities.Notification", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("ReviewId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ReviewId");
-
-                    b.ToTable("Notifications");
-                });
-
             modelBuilder.Entity("Domain.Entities.Resume", b =>
                 {
                     b.Property<int>("Id")
@@ -86,9 +65,6 @@ namespace Infastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ReviewId")
-                        .HasColumnType("int");
-
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
@@ -96,8 +72,6 @@ namespace Infastructure.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ReviewId");
 
                     b.HasIndex("UserId");
 
@@ -187,7 +161,7 @@ namespace Infastructure.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2024, 5, 22, 21, 25, 9, 302, DateTimeKind.Utc).AddTicks(3663),
+                            CreatedAt = new DateTime(2024, 5, 23, 9, 44, 20, 575, DateTimeKind.Utc).AddTicks(9024),
                             Email = "ozodchik.krasavchik@gmail.com",
                             FullName = "Ozodbek",
                             Gender = 0,
@@ -197,32 +171,13 @@ namespace Infastructure.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Domain.Entities.Notification", b =>
-                {
-                    b.HasOne("Domain.Entities.Review", "Review")
-                        .WithMany()
-                        .HasForeignKey("ReviewId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Review");
-                });
-
             modelBuilder.Entity("Domain.Entities.Resume", b =>
                 {
-                    b.HasOne("Domain.Entities.Review", "Review")
-                        .WithMany()
-                        .HasForeignKey("ReviewId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Domain.Entities.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Review");
 
                     b.Navigation("User");
                 });
