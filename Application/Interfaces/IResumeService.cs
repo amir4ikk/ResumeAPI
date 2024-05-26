@@ -1,5 +1,5 @@
 ﻿using Application.DTOs.ResumeDtos;
-using Application.DTOs.UserDtos;
+using Microsoft.AspNetCore.Http;
 
 namespace Application.Interfaces;
 public interface IResumeService
@@ -9,4 +9,6 @@ public interface IResumeService
     Task<List<ResumeDto>> GetAllAsync();
     Task UpdateAsync(ResumeDto dto);
     Task DeleteAsync(int id);
+    string ExtractTextFromPdf(IFormFile file);
+    Dictionary<string, string> ParseResumeData(string text);
 }

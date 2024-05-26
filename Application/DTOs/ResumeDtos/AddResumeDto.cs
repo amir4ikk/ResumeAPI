@@ -13,22 +13,21 @@ public class AddResumeDto
     public string Languages { get; set; } = string.Empty;
     public int UserId { get; set; }
     public string FilePath { get; set; } = string.Empty;
-    public int ReviewId { get; set; }
 
-    public static implicit operator Resume(AddResumeDto dto)
+    public static implicit operator Resume(AddResumeDto resume)
     {
         return new Resume
         {
-            Name = dto.Name,
-            Contact = dto.Contact,
-            Location = dto.Location,
-            WorkingExperience = dto.WorkingExperience,
-            Education = dto.Education,
-            Description = dto.Description,
-            ProgrammingLanguages = dto.ProgrammingLanguages,
-            Languages = dto.Languages,
-            UserId = dto.UserId,
-            FilePath = dto.FilePath,
+            Name = resume.Name,
+            Contact = resume.Contact,
+            Location = resume.Location,
+            WorkingExperience = resume.WorkingExperience,
+            Education = resume.Education,
+            Description = resume.Description,
+            ProgrammingLanguages = resume.ProgrammingLanguages,
+            Languages = resume.Languages,
+            FilePath = resume.FilePath,
+            UserId = resume.UserId
         };
     }
 }

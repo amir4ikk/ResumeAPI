@@ -12,14 +12,14 @@ public class AppDbContext(DbContextOptions<AppDbContext> options)
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<User>().HasData(
-            new User
-            {
-                Id = 1,
-                FullName = "Ozodbek",
-                Email = "ozodchik.krasavchik@gmail.com",
-                Gender = Gender.Male,
-                PasswordHash = "12345",
-                Role = Roles.SuperAdmin
-            });
+        new User
+        {
+            Id = 1,
+            FullName = "Ozodbek",
+            Email = "isroilov0905@gmail.com",
+            Gender = Gender.Male,
+            PasswordHash = "6596443e7768f0c1ae055535783a3b6fcd3c2efb4fc0725336e31e087c4d10fc",
+            Role = Roles.SuperAdmin
+        });
     }
 }

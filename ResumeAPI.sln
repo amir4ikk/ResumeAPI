@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResumeAPI", "ResumeAPI\ResumeAPI.csproj", "{65AFF939-FE4B-4FB5-A907-31EA4A4A99A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ResumeAPI", "ResumeAPI\ResumeAPI.csproj", "{65AFF939-FE4B-4FB5-A907-31EA4A4A99A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{5A265419-8A82-4ED8-8B76-F5876BDED022}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{5A265419-8A82-4ED8-8B76-F5876BDED022}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infastructure", "Infastructure\Infastructure.csproj", "{877EAED3-D315-4CD2-8121-C574617CC32F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infastructure", "Infastructure\Infastructure.csproj", "{877EAED3-D315-4CD2-8121-C574617CC32F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{2D54383C-D4FD-44DC-8318-CE92E0C814AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\Application.csproj", "{2D54383C-D4FD-44DC-8318-CE92E0C814AB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pdfs", "Pdfs", "{4A2B5D0C-CB3E-404C-A08B-421AD4622780}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

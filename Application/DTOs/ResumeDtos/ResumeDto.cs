@@ -5,7 +5,6 @@ public class ResumeDto : AddResumeDto
 {
     public int Id { get; set; }
     public User User { get; set; } = null!;
-    public Review Review { get; set; } = null!;
 
     public static implicit operator ResumeDto(Resume resume)
     {

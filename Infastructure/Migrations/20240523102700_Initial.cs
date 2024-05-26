@@ -88,7 +88,7 @@ namespace Infastructure.Migrations
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "CreatedAt", "Email", "FullName", "Gender", "IsVerified", "PasswordHash", "Role" },
-                values: new object[] { 1, new DateTime(2024, 5, 23, 9, 44, 20, 575, DateTimeKind.Utc).AddTicks(9024), "ozodchik.krasavchik@gmail.com", "Ozodbek", 0, false, "12345", 2 });
+                values: new object[] { 1, new DateTime(2024, 5, 23, 10, 27, 0, 174, DateTimeKind.Utc).AddTicks(486), "isroilov0905@gmail.com", "Ozodbek", 0, false, "ISmoiljon", 2 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Resumes_UserId",

@@ -3,7 +3,6 @@ using Application.Common.Security;
 using Application.Common.Validators;
 using Application.DTOs.UserDtos;
 using Application.Interfaces;
-using Data.Interfaces;
 using Domain.Entities;
 using FluentValidation;
 using Infastructure.Interfaces;

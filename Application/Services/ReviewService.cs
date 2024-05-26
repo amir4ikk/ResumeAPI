@@ -1,6 +1,5 @@
 ﻿using Application.DTOs.ReviewDtos;
 using Application.Interfaces;
-using Infastructure.Interfaces;
 
 namespace Application.Services;
 public class ReviewService : IReviewService
