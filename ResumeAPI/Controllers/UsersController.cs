@@ -20,14 +20,14 @@ namespace ResumeAPI.Controllers
         }
 
         [HttpGet("users")]
-        [Authorize(Roles = "Admin, SuperAdmin")]
         public async Task<IActionResult> GetAllAsync()
         {
             return Ok(await _userService.GetAllAsync());
         }
 
         [HttpPut]
-        [Authorize]
+
+        [Authorize(Roles = "Admin, SuperAdmin")]
         public async Task<IActionResult> UpdateAsync([FromForm] UpdateUserDto dto)
         {
             var id = int.Parse(HttpContext.User.FindFirst("Id")!.Value);
@@ -37,7 +37,7 @@ namespace ResumeAPI.Controllers
         }
 
         [HttpDelete("id")]
-        [Authorize]
+        [Authorize(Roles = "Admin, SuperAdmin")]
         public async Task<IActionResult> DeleteAsync(int id)
         {
             await _userService.DeleteAsync(id);

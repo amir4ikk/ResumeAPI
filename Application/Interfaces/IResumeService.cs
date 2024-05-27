@@ -9,6 +9,6 @@ public interface IResumeService
     Task<List<ResumeDto>> GetAllAsync();
     Task UpdateAsync(ResumeDto dto);
     Task DeleteAsync(int id);
-    string ExtractTextFromPdf(IFormFile file);
+    string ExtractTextFromPdf(ForFileResumeDto file);
     Dictionary<string, string> ParseResumeData(string text);
 }

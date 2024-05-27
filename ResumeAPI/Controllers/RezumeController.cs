@@ -1,4 +1,5 @@
-﻿using Application.Interfaces;
+﻿using Application.DTOs.ResumeDtos;
+using Application.Interfaces;
 using Infastructure.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,13 +14,13 @@ public class RezumeController(IResumeService resumeService,
     private readonly IResumeRepository _resumeRepository = resumeRepository;
 
     [HttpPost("upload")]
-    public async Task<IActionResult> UploadPdf([FromForm] IFormFile file, [FromForm] int userId)
+    public async Task<IActionResult> UploadPdf([FromForm] ForFileResumeDto file, [FromForm] int userId)
     {
-        if (file == null || file.Length == 0)
+        if (file == null)
         {
             return BadRequest("Invalid file upload request");
         }
-
+         
         var text = _resumeService.ExtractTextFromPdf(file);
         var resumeData = _resumeService.ParseResumeData(text);
 
@@ -28,3 +29,4 @@ public class RezumeController(IResumeService resumeService,
         return Ok(createdResume);
     }
 }
+

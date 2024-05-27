@@ -15,6 +15,10 @@ public class UserService(IUnitOfWork unitOfWork) : IUserService
 
     public async Task DeleteAsync(int id)
     {
+        if (id == 1)
+        {
+            throw new StatusCodeExeption(HttpStatusCode.BadRequest, "Kallangni ishlat");
+        }
         var user = await _unitOfWork.User.GetByIdAsync(id);
         if (user is null)
             throw new StatusCodeExeption(HttpStatusCode.NotFound, "User not found");

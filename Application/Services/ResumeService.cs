@@ -32,9 +32,9 @@ public class ResumeService : IResumeService
         throw new NotImplementedException();
     }
 
-    public string ExtractTextFromPdf(IFormFile file)
+    public string ExtractTextFromPdf(ForFileResumeDto file)
     {
-        using (var reader = new PdfReader(file.OpenReadStream()))
+        using (var reader = new PdfReader(file.File.OpenReadStream()))
         {
             var text = string.Empty;
             for (int i = 1; i <= reader.NumberOfPages; i++)
@@ -49,7 +49,6 @@ public class ResumeService : IResumeService
     {
         var resumeData = new Dictionary<string, string>();
 
-        // Define keywords for resume properties
         var properties = new Dictionary<string, string>
             {
                 { "Name", "Name" },
@@ -62,7 +61,6 @@ public class ResumeService : IResumeService
                 { "Languages", "Languages" }
             };
 
-        // Split the text into lines
         var lines = text.Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
 
         foreach (var line in lines)
